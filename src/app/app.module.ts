@@ -7,6 +7,7 @@ import { NewsComponent } from './pages/news/news.component';
 import { MenuComponent } from './menu/menu.component';
 import { HeadlinesComponent } from './pages/headlines/headlines.component';
 import { Page404Component } from './pages/page404/page404.component';
+import {​​ HttpClientModule }​​ from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { Page404Component } from './pages/page404/page404.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

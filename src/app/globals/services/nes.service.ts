@@ -1,29 +1,16 @@
 import { Injectable } from '@angular/core';
+import {​​ HttpClient }​​ from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NesService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { 
 
-  getNews(){
-    return [
-      {
-        url: "#",
-        title: "Noticia 1",
-        image: "https://dummyimage.com/300.png/09f/fff"
-      },
-      {
-        url: "#",
-        title: "Noticia 1",
-        image: "https://dummyimage.com/300.png/09f/fff"
-      },
-      {
-        url: "#",
-        title: "Noticia 1",
-        image: "https://dummyimage.com/300.png/09f/fff"
-      }
-    ]
+  }
+
+  getNews(q:string):any{
+    return this.http.get(`http://localhost:3000/api/news?q=${q}`).toPromise();
   }
 }

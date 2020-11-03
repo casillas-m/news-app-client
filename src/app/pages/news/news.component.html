@@ -4,9 +4,10 @@
 </form>
 
 <div class="grid">
-    <div *ngFor="let item of news" class="sm-50 md-25">
-      <img *ngIf="item.image" src="{{item.image}}" alt="">
-      <a href="{{item.url}}"></a>
+    <div *ngFor="let item of news" class="sm-50 md-25 lg-33">
+      <img style="width: 80%;" *ngIf="item.urlToImage" src="{{item.urlToImage}}" alt="">
+      <img style="width: 50%;display: block;" *ngIf="!item.urlToImage" src="https://www.unionsquaredesign.com/wp-content/uploads/2016/04/2848153500_7826b897af_o.png" alt="">
+      <a href="{{item.url}}">{{item.url}}</a>
     </div>
     <div *ngIf="news.length == 0" class="xs-100">No hay elementos para mostrar</div>
 </div>
