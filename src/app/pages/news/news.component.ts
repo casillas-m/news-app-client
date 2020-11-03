@@ -13,7 +13,7 @@ export class NewsComponent implements OnInit {
   news:any[]=[]
   sources:any[]=[]
   source:string="";
-  
+  search:string="";
 
   ngOnInit(): void {
     this.newsService.getNews("bitcoin",this.source).then(data=>{
@@ -32,7 +32,8 @@ export class NewsComponent implements OnInit {
   }
 
   onChange():void{
-    this.newsService.getNews("bitcoin",this.source).then(data=>{
+    console.log(this.search)
+    this.newsService.getNews(this.search,this.source).then(data=>{
       this.news = data
       // console.log(this.news)
     }).catch(()=>{

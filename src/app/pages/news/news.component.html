@@ -4,9 +4,9 @@ Fuentes:
     <option *ngFor="let item of sources" value="{{item.id}}">{{item.name}}</option>
 </select>
 
-<form class="form-inline" style="float: right">
-    <input  class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+<form (submit)="onChange()" class="form-inline" style="float: right"   >
+    <input  [(ngModel)]="search" name="buscar" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button  class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 </form>
 
 <div class="grid">
