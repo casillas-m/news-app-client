@@ -17,6 +17,11 @@ export class NewsComponent implements OnInit {
 
   ngOnInit(): void {
     this.newsService.getNews("bitcoin",this.source).then(data=>{
+      data.forEach(item => {
+        if(item.urlToImage){
+          
+        }
+      });
       this.news = data
       // console.log(this.news)
     }).catch(()=>{
