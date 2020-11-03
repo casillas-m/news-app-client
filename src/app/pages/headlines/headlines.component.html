@@ -1,6 +1,14 @@
+Country:
 <select class="custom-select">
-    <option selected>Open this select menu</option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
+    <option value="mx" selected>MX</option>
+    <option value="us">US</option>
 </select>
+
+<div class="grid">
+    <div *ngFor="let item of news" class="sm-50 md-25 lg-33">
+      <img style="width: 80%;" *ngIf="item.urlToImage" src="{{item.urlToImage}}" alt="">
+      <img style="width: 80%;display: block;" *ngIf="!item.urlToImage" src="https://pm1.narvii.com/5713/b2fc3bebbbf12f65f1a5c2e20cafb5def493e8cc_hq.jpg" alt="">
+      <a href="{{item.url}}">{{item.url}}</a>
+    </div>
+    <div *ngIf="news.length == 0" class="xs-100">No hay elementos para mostrar</div>
+</div>

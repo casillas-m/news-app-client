@@ -13,4 +13,7 @@ export class NesService {
   getNews(q:string):any{
     return this.http.get(`http://localhost:3000/api/news?q=${q}`).toPromise();
   }
+  getHeadlines(country:string):any{
+    return this.http.get(`http://localhost:3000/api/headlines?country=${country}`).toPromise();
+  }
 }

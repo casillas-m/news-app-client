@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NesService} from "./../../globals/services/nes.service"
 
 @Component({
   selector: 'app-headlines',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeadlinesComponent implements OnInit {
 
-  constructor() { }
+  news:any[]=[]
+  constructor(private newsService:NesService) { }
 
   ngOnInit(): void {
+    this.newsService.getHeadlines("mx").then(data=>{
+      this.news = data
+      console.log(this.news)
+    }).catch(()=>{
+      console.log("Fallo en news component")
+    })
   }
 
 }
