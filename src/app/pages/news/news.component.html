@@ -1,7 +1,12 @@
-<ul>
-    <li *ngFor="let item of news">
-        <a href="{{item.url}}"></a>
-        <img *ngIf="item.image" src="{{item.image}}" alt="">
-        {{item.title}}
-    </li>
-</ul>
+<form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
+
+<div class="grid">
+    <div *ngFor="let item of news" class="sm-50 md-25">
+      <img *ngIf="item.image" src="{{item.image}}" alt="">
+      <a href="{{item.url}}"></a>
+    </div>
+    <div *ngIf="news.length == 0" class="xs-100">No hay elementos para mostrar</div>
+</div>
