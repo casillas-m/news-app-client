@@ -1,5 +1,5 @@
 Country:
-<select class="custom-select">
+<select class="custom-select" [(ngModel)]="country" (change)="onChange()">
     <option value="mx" selected>MX</option>
     <option value="us">US</option>
 </select>

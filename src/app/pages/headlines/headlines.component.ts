@@ -9,6 +9,7 @@ import { NesService} from "./../../globals/services/nes.service"
 export class HeadlinesComponent implements OnInit {
 
   news:any[]=[]
+  country:string = "mx"
   constructor(private newsService:NesService) { }
 
   ngOnInit(): void {
@@ -20,4 +21,12 @@ export class HeadlinesComponent implements OnInit {
     })
   }
 
+  onChange(): void {
+    this.newsService.getHeadlines(this.country).then(data=>{
+      this.news = data
+      console.log(this.news)
+    }).catch(()=>{
+      console.log("Fallo en news component")
+    })
+  }
 }

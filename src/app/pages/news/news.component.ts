@@ -11,6 +11,7 @@ export class NewsComponent implements OnInit {
   constructor(private newsService:NesService) {}
 
   news:any[]=[]
+  
 
   ngOnInit(): void {
     this.newsService.getNews("bitcoin").then(data=>{
@@ -20,4 +21,6 @@ export class NewsComponent implements OnInit {
       console.log("Fallo en news component")
     })
   }
+
+
 }
